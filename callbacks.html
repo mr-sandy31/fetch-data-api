@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back</title>
+</head>
+<style>
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+    }
+
+    body {
+        background-color: peachpuff;
+    }
+
+    .btn-click {
+        padding: 10px;
+        color: white;
+        background-color: green;
+        border: none;
+        font-weight: 600;
+        border-radius: 5px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    #output {
+        display: flex;
+        justify-content: center;
+        margin-top: -160px;
+        font-size: 20px;
+        background-color: #fff;
+    }
+</style>
+
+<body>
+    <section>
+        <div class="btn-container">
+            <button class="btn-click" onclick="call()">Click Me</button>
+        </div>
+        <div id="output"></div>
+    </section>
+    <script>
+        function call() {
+            document.getElementById("output").innerText = "Button Is Clicked Execute After 5s";
+            delayCallback(updateText);
+        }
+        function delayCallback(callback) {
+            setTimeout(callback, 5000);
+        }
+        function updateText() {
+            document.getElementById("output").innerText = "Callback executed after 5s seconds after the delay";
+        }
+
+    </script>
+</body>
+
+</html>
